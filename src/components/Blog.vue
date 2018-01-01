@@ -31,7 +31,7 @@ export default {
     }
   },
   created () {
-    axios.get('http://jsonplaceholder.typicode.com/posts')
+    axios.get('https://jsonplaceholder.typicode.com/')
       .then(response => {
         this.faqs = response.data.slice(0, 5)
       })
