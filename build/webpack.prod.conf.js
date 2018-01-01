@@ -108,7 +108,13 @@ const webpackConfig = merge(baseWebpackConfig, {
       filename: 'service-worker.js',
       staticFileGlobs: ['docs/**/*.{js,html,css}'],
       minify: true,
-      stripPrefix: 'docs/'
+      stripPrefix: 'docs/',
+      runtimeCaching: [
+        {
+          urlPattern: /^https:\/\/abdulbasithb\.github\.io\/pwa-blog\/data\//,
+          handler: 'cacheFirst'
+        }
+      ]
     })
   ]
 })
